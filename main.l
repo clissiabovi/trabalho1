@@ -16,6 +16,7 @@ void yyerror(char *);
 [\)] {return PF;}
 
 [\+] {return ADD;}
+[\-] {return SUB;}
 [\/] {return DIV;}
 [\*] {return MUL;}
 [\^] {return EL;}

@@ -68,8 +68,9 @@
   #include <stdlib.h>
 void yyerror(char *);
 int yylex(void);
+int i=0;
 
-#line 73 "y.tab.c" /* yacc.c:339  */
+#line 74 "y.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -109,10 +110,10 @@ extern int yydebug;
     PA = 260,
     PF = 261,
     ADD = 262,
-    DIV = 263,
-    MUL = 264,
-    EL = 265,
-    SUB = 266
+    SUB = 263,
+    DIV = 264,
+    MUL = 265,
+    EL = 266
   };
 #endif
 /* Tokens.  */
@@ -121,10 +122,10 @@ extern int yydebug;
 #define PA 260
 #define PF 261
 #define ADD 262
-#define DIV 263
-#define MUL 264
-#define EL 265
-#define SUB 266
+#define SUB 263
+#define DIV 264
+#define MUL 265
+#define EL 266
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -142,7 +143,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 146 "y.tab.c" /* yacc.c:358  */
+#line 147 "y.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -384,16 +385,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  8
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   27
+#define YYLAST   24
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  12
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  5
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  11
+#define YYNRULES  12
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  19
+#define YYNSTATES  21
 
 /* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
    by yylex, with out-of-bounds checking.  */
@@ -440,8 +441,8 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    17,    17,    18,    22,    23,    24,    28,    29,    30,
-      34,    35
+       0,    19,    19,    20,    24,    25,    26,    27,    31,    32,
+      33,    37,    38
 };
 #endif
 
@@ -451,7 +452,7 @@ static const yytype_uint8 yyrline[] =
 static const char *const yytname[] =
 {
   "$end", "error", "$undefined", "barran", "NUM", "PA", "PF", "ADD",
-  "DIV", "MUL", "EL", "SUB", "$accept", "S", "E", "F", "POT", YY_NULLPTR
+  "SUB", "DIV", "MUL", "EL", "$accept", "S", "E", "F", "POT", YY_NULLPTR
 };
 #endif
 
@@ -479,8 +480,9 @@ static const yytype_uint16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-       2,    -6,     2,    25,     9,    -6,    -6,    -5,    -6,    -6,
-       2,     2,     2,     2,    -6,     5,    13,    16,    19
+      18,    -6,    18,     7,    10,    -6,    -6,    -5,    -6,    -6,
+      18,    18,    18,    18,    18,    -6,     5,     5,    13,    13,
+      -6
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -488,8 +490,9 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       3,    11,     0,     0,     0,     4,     7,     0,     1,     2,
-       0,     0,     0,     0,     5,     6,     9,     8,    10
+       3,    12,     0,     0,     0,     4,     8,     0,     1,     2,
+       0,     0,     0,     0,     0,     5,     6,     7,    10,     9,
+      11
 };
 
   /* YYPGOTO[NTERM-NUM].  */
@@ -509,16 +512,16 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_uint8 yytable[] =
 {
-       7,    14,    10,    11,    12,    13,     1,     2,    15,    16,
-      17,    18,     9,    11,    12,    13,    10,    11,    12,    13,
-      10,    11,    12,    13,    11,     8,    13,    11
+       7,    15,    10,    11,    12,    13,    14,     8,    16,    17,
+      18,    19,    20,     9,    12,    13,    14,    10,    11,    12,
+      13,    14,     1,     2,    14
 };
 
 static const yytype_uint8 yycheck[] =
 {
-       2,     6,     7,     8,     9,    10,     4,     5,    10,    11,
-      12,    13,     3,     8,     9,    10,     7,     8,     9,    10,
-       7,     8,     9,    10,     8,     0,    10,     8
+       2,     6,     7,     8,     9,    10,    11,     0,    10,    11,
+      12,    13,    14,     3,     9,    10,    11,     7,     8,     9,
+      10,    11,     4,     5,    11
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
@@ -526,21 +529,22 @@ static const yytype_uint8 yycheck[] =
 static const yytype_uint8 yystos[] =
 {
        0,     4,     5,    13,    14,    15,    16,    14,     0,     3,
-       7,     8,     9,    10,     6,    14,    14,    14,    14
+       7,     8,     9,    10,    11,     6,    14,    14,    14,    14,
+      14
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    12,    13,    13,    14,    14,    14,    15,    15,    15,
-      16,    16
+       0,    12,    13,    13,    14,    14,    14,    14,    15,    15,
+      15,    16,    16
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     2,     0,     1,     3,     3,     1,     3,     3,
-       3,     1
+       0,     2,     2,     0,     1,     3,     3,     3,     1,     3,
+       3,     3,     1
 };
 
 
@@ -1217,61 +1221,67 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 17 "main.y" /* yacc.c:1646  */
-    {printf("POP<xjnaskn A\n");}
-#line 1223 "y.tab.c" /* yacc.c:1646  */
+#line 19 "main.y" /* yacc.c:1646  */
+    {printf("POP A\n");}
+#line 1227 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 22 "main.y" /* yacc.c:1646  */
+#line 24 "main.y" /* yacc.c:1646  */
     {}
-#line 1229 "y.tab.c" /* yacc.c:1646  */
+#line 1233 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 23 "main.y" /* yacc.c:1646  */
+#line 25 "main.y" /* yacc.c:1646  */
     {}
-#line 1235 "y.tab.c" /* yacc.c:1646  */
+#line 1239 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 24 "main.y" /* yacc.c:1646  */
+#line 26 "main.y" /* yacc.c:1646  */
     {printf("POP A\nPOP C\nADD C, A\nPUSH C\n");}
-#line 1241 "y.tab.c" /* yacc.c:1646  */
+#line 1245 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 28 "main.y" /* yacc.c:1646  */
-    {}
-#line 1247 "y.tab.c" /* yacc.c:1646  */
+#line 27 "main.y" /* yacc.c:1646  */
+    {printf("POP A\nPOP C\nSUB C, A\nPUSH C\n");}
+#line 1251 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 29 "main.y" /* yacc.c:1646  */
-    {printf("POP A\nPOP C\nMUL C\nPUSH A\n");}
-#line 1253 "y.tab.c" /* yacc.c:1646  */
+#line 31 "main.y" /* yacc.c:1646  */
+    {}
+#line 1257 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 30 "main.y" /* yacc.c:1646  */
-    {printf("POP A\nPOP C\nDIV C\nPUSH A\n");}
-#line 1259 "y.tab.c" /* yacc.c:1646  */
+#line 32 "main.y" /* yacc.c:1646  */
+    {printf("POP A\nPOP C\nMUL C\nPUSH A\n");}
+#line 1263 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 34 "main.y" /* yacc.c:1646  */
-    {printf("POP C\nPOP B\nMOV A, 1\nMOV D, 0\nloop:\nCMP C, D\nJZ end\nMUL B\nSUB C, 1\nJMP loop\nend:\nPUSH A\n");}
-#line 1265 "y.tab.c" /* yacc.c:1646  */
+#line 33 "main.y" /* yacc.c:1646  */
+    {printf("POP C\nPOP A\nDIV C\nPUSH A\n");}
+#line 1269 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 35 "main.y" /* yacc.c:1646  */
+#line 37 "main.y" /* yacc.c:1646  */
+    {printf("POP C\nPOP B\nMOV A, 1\nMOV D, 0\nloop%d:\nCMP C, D\nJZ end%d\nMUL B\nSUB C, 1\nJMP loop%d\nend%d:\nPUSH A\n", i,i,i,i);i++;}
+#line 1275 "y.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 12:
+#line 38 "main.y" /* yacc.c:1646  */
     {printf("PUSH %d\n", yylval);}
-#line 1271 "y.tab.c" /* yacc.c:1646  */
+#line 1281 "y.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1275 "y.tab.c" /* yacc.c:1646  */
+#line 1285 "y.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1499,7 +1509,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 38 "main.y" /* yacc.c:1906  */
+#line 41 "main.y" /* yacc.c:1906  */
 
 /*
 loop da potência
@@ -1507,13 +1517,13 @@ POP C
 POP B
 MOV A, 1
 MOV D, 0
-loop:
+loop%d:
 CMP C, D
-JZ end
+JZ end%d
 MUL B
 SUB C, 1
-JMP loop
-end:
+JMP loop%d
+end%d:
 PUSH A
 */
 void yyerror(char *s) {}

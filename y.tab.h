@@ -50,10 +50,10 @@ extern int yydebug;
     PA = 260,
     PF = 261,
     ADD = 262,
-    DIV = 263,
-    MUL = 264,
-    EL = 265,
-    SUB = 266
+    SUB = 263,
+    DIV = 264,
+    MUL = 265,
+    EL = 266
   };
 #endif
 /* Tokens.  */
@@ -62,10 +62,10 @@ extern int yydebug;
 #define PA 260
 #define PF 261
 #define ADD 262
-#define DIV 263
-#define MUL 264
-#define EL 265
-#define SUB 266
+#define SUB 263
+#define DIV 264
+#define MUL 265
+#define EL 266
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
